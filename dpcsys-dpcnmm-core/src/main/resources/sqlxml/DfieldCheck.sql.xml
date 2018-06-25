@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sqlList tableName="d_field_check">
+	<primaryKey dbPrimaryKey="id" classPrimaryKey="id" type="java.lang.Long"/>
+	<tableFiledList>
+			<filed dbFiledName="name" classFiledName="name" type="java.lang.String"/>
+			<filed dbFiledName="regular" classFiledName="regular" type="java.lang.String"/>
+			<filed dbFiledName="owned_business" classFiledName="ownedBusiness" type="java.lang.String"/>
+			<filed dbFiledName="remarks" classFiledName="remarks" type="java.lang.String"/>
+			<filed dbFiledName="del_flg" classFiledName="delFlg" type="java.lang.String"/>
+			<filed dbFiledName="ins_user" classFiledName="insUser" type="java.lang.String"/>
+			<filed dbFiledName="ins_time" classFiledName="insTime" type="java.util.Date"/>
+			<filed dbFiledName="upd_user" classFiledName="updUser" type="java.lang.String"/>
+			<filed dbFiledName="upd_time" classFiledName="updTime" type="java.util.Date"/>
+	</tableFiledList>
+	<sqlElement key="findByObj">
+	    <![CDATA[
+			select A.id as id,A.name as name,A.regular as regular,A.owned_business as ownedBusiness,A.remarks as remarks,A.del_flg as delFlg,A.ins_user as insUser,A.ins_time as insTime,A.upd_user as updUser,A.upd_time as updTime 
+			from d_field_check A where 1 = 1
+			#if("$!id" != "") and A.id = :id #end
+			#if("$!name" != "") and A.name = :name #end
+			#if("$!regular" != "") and A.regular = :regular #end
+			#if("$!ownedBusiness" != "") and A.owned_business = :ownedBusiness #end
+			#if("$!remarks" != "") and A.remarks = :remarks #end
+			#if("$!delFlg" != "") and A.del_flg = :delFlg #end
+			#if("$!insUser" != "") and A.ins_user = :insUser #end
+			#if("$!insTime" != "") and A.ins_time = :insTime #end
+			#if("$!updUser" != "") and A.upd_user = :updUser #end
+			#if("$!updTime" != "") and A.upd_time = :updTime #end
+	    ]]>
+    </sqlElement>
+	<sqlElement key="findListMapByObj">
+	    <![CDATA[
+			select A.id as id,A.name as name,A.regular as regular,A.owned_business as ownedBusiness,A.remarks as remarks,A.del_flg as delFlg,A.ins_user as insUser,A.ins_time as insTime,A.upd_user as updUser,A.upd_time as updTime
+			from d_field_check A where 1 = 1
+			#if("$!id" != "") and A.id = :id #end
+			#if("$!name" != "") and A.name = :name #end
+			#if("$!regular" != "") and A.regular = :regular #end
+			#if("$!ownedBusiness" != "") and A.owned_business = :ownedBusiness #end
+			#if("$!remarks" != "") and A.remarks = :remarks #end
+			#if("$!delFlg" != "") and A.del_flg = :delFlg #end
+			#if("$!insUser" != "") and A.ins_user = :insUser #end
+			#if("$!insTime" != "") and A.ins_time = :insTime #end
+			#if("$!updUser" != "") and A.upd_user = :updUser #end
+			#if("$!updTime" != "") and A.upd_time = :updTime #end
+	    ]]>
+    </sqlElement>
+	<sqlElement key="findByPageObj">
+	    <![CDATA[
+	    	select A.id as id,A.name as name,A.regular as regular,A.owned_business as ownedBusiness,A.remarks as remarks,A.del_flg as delFlg,A.ins_user as insUser,A.ins_time as insTime,A.upd_user as updUser,A.upd_time as updTime 
+			from d_field_check A where 1 = 1
+			#if("$!id" != "") and A.id = :id #end
+			#if("$!name" != "") and A.name = :name #end
+			#if("$!regular" != "") and A.regular = :regular #end
+			#if("$!ownedBusiness" != "") and A.owned_business = :ownedBusiness #end
+			#if("$!remarks" != "") and A.remarks = :remarks #end
+			#if("$!delFlg" != "") and A.del_flg = :delFlg #end
+			#if("$!insUser" != "") and A.ins_user = :insUser #end
+			#if("$!insTime" != "") and A.ins_time = :insTime #end
+			#if("$!updUser" != "") and A.upd_user = :updUser #end
+			#if("$!updTime" != "") and A.upd_time = :updTime #end
+			limit :startNum,:pageSize
+	    ]]>
+    </sqlElement>
+	<sqlElement key="findListMapByPageObj">
+	    <![CDATA[
+	    	select A.id as id,A.name as name,A.regular as regular,A.owned_business as ownedBusiness,A.remarks as remarks,A.del_flg as delFlg,A.ins_user as insUser,A.ins_time as insTime,A.upd_user as updUser,A.upd_time as updTime 
+			from d_field_check A where 1 = 1
+			#if("$!id" != "") and A.id = :id #end
+			#if("$!name" != "") and A.name = :name #end
+			#if("$!regular" != "") and A.regular = :regular #end
+			#if("$!ownedBusiness" != "") and A.owned_business = :ownedBusiness #end
+			#if("$!remarks" != "") and A.remarks = :remarks #end
+			#if("$!delFlg" != "") and A.del_flg = :delFlg #end
+			#if("$!insUser" != "") and A.ins_user = :insUser #end
+			#if("$!insTime" != "") and A.ins_time = :insTime #end
+			#if("$!updUser" != "") and A.upd_user = :updUser #end
+			#if("$!updTime" != "") and A.upd_time = :updTime #end
+			limit :startNum,:pageSize
+	    ]]>
+    </sqlElement>
+	<sqlElement key="count">
+	    <![CDATA[
+			select count(*) as count from d_field_check where 1 = 1
+			#if("$!id" != "") and id = :id #end
+			#if("$!name" != "") and name = :name #end
+			#if("$!regular" != "") and regular = :regular #end
+			#if("$!ownedBusiness" != "") and owned_business = :ownedBusiness #end
+			#if("$!remarks" != "") and remarks = :remarks #end
+			#if("$!delFlg" != "") and del_flg = :delFlg #end
+			#if("$!insUser" != "") and ins_user = :insUser #end
+			#if("$!insTime" != "") and ins_time = :insTime #end
+			#if("$!updUser" != "") and upd_user = :updUser #end
+			#if("$!updTime" != "") and upd_time = :updTime #end
+	    ]]>
+    </sqlElement>
+</sqlList>

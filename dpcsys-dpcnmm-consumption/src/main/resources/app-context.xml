@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+		xsi:schemaLocation="http://www.springframework.org/schema/beans
+							http://www.springframework.org/schema/beans/spring-beans.xsd
+							http://code.alibabatech.com/schema/dubbo
+							http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+	
+	<bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="locations">
+			<list>
+				<value>classpath:runtime.properties</value>
+				<value>classpath:conf/redis.properties</value>
+			</list>
+		</property>
+	</bean>
+
+	<!-- 引入spring  -->
+	<import resource="spring/spring-mvc.xml"/>
+	
+	<!-- 引入dubbo  -->
+	<import resource="dubbo/application-dubbo.xml"/>
+	
+	<!-- 引入redis -->
+	<import resource="redis/app-redis.xml"/>
+	
+	<!-- 加载系统设置信息 -->
+	<bean id="dpcnmmAppUtil" class="dpcsys.consumption.dpcnmm.listener.DpcnmmAppUtil" />
+	<bean id="redisManager" class="dpcsys.consumption.dpcnmm.redisManager.RedisManager" />
+	<!-- Restful形式接口文档 -->
+	<!--<bean class="com.mangofactory.swagger.configuration.SpringSwaggerConfig" /> -->
+</beans>

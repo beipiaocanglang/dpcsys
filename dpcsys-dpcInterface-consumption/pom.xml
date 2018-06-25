@@ -1,0 +1,59 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>dpcsys</groupId>
+        <artifactId>dpcsys</artifactId>
+        <version>0.1</version>
+    </parent>
+    <artifactId>dpcsys-dpcInterface-consumption</artifactId>
+    <name>dpcsys-dpcInterface-consumption</name>
+    <url>http://maven.apache.org</url>
+
+    <!-- 指定仓库地址 -->
+    <repositories>
+        <repository>
+            <id>nexus</id>
+            <name>Team Nexus Repository</name>
+            <url>http://120.78.66.243:56011/nexus/content/groups/public</url>
+        </repository>
+    </repositories>
+
+    <!-- 指定插件仓库地址 -->
+    <pluginRepositories>
+        <pluginRepository>
+            <id>nexus</id>
+            <name>Team Nexus Repository</name>
+            <url>http://120.78.66.243:56011/nexus/content/groups/public</url>
+        </pluginRepository>
+    </pluginRepositories>
+
+    <dependencies>
+
+        <!-- RabbitMQ begin-->
+        <dependency>
+            <groupId>com.rabbitmq</groupId>
+            <artifactId>amqp-client</artifactId>
+            <version>3.5.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.amqp</groupId>
+            <artifactId>spring-rabbit</artifactId>
+            <version>1.4.5.RELEASE</version>
+        </dependency>
+        <!-- RabbitMQ end-->
+        <dependency>
+            <groupId>dpcsys</groupId>
+            <artifactId>dpcsys-consumption</artifactId>
+            <version>0.1</version>
+        </dependency>
+        <dependency>
+            <groupId>dpcsys</groupId>
+            <artifactId>dpcsys-dpcInterface-api</artifactId>
+            <version>0.1</version>
+        </dependency>
+    </dependencies>
+
+    <packaging>war</packaging>
+</project>

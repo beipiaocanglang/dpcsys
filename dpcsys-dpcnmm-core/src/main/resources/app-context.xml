@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xsi:schemaLocation="http://www.springframework.org/schema/beans
+							http://www.springframework.org/schema/beans/spring-beans.xsd">
+		
+	<!-- 引入数据源配置文件(所有数据源的配置文件中的key一定要唯一，否则出现值引用最早引用文件中的值) -->
+	<!-- 如在mysql和sqlServer配置文件中写相同的key是‘c3p0.user’
+		  引用时先引用了sqlServer配置文件，并且设置数据源时都使用${c3p0.user}
+		  则会默认都用sqlServer中的c3p0.user -->
+    <bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">  
+        <property name="locations">
+        	<list>
+        		<value>classpath:conf/jdbc.basic.properties</value>
+        		<value>classpath:conf/jdbc.mysql.properties</value>
+        		<value>classpath:runtime.properties</value>
+        	</list>
+        </property>
+    </bean>
+		
+	<!-- 引用多个数据源 -->
+	<!--<import resource="datasource/app-datasource-sqlServer.xml" /> -->
+	<import resource="datasource/app-datasource-mysql.xml" />
+	
+	<!-- 引用数据源 -->
+	<import resource="spring/app-resources.xml"/>
+	<import resource="spring/app-dao-service-frame.xml"/>
+	<import resource="spring/app-dao-service-dpcnmm.xml"/>
+
+	<!-- 引入dubbo服务接口 -->
+	<import resource="dubbo/app-dubbo-service.xml"/>
+</beans>

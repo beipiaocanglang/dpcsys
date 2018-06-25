@@ -1,0 +1,93 @@
+<?xml version="1.0"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+         xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>dpcsys</groupId>
+        <artifactId>dpcsys</artifactId>
+        <version>0.1</version>
+    </parent>
+
+    <artifactId>dpcsys-core</artifactId>
+    <name>dpcsys-core</name>
+    <url>http://maven.apache.org</url>
+
+    <!-- 指定仓库地址 -->
+    <repositories>
+        <repository>
+            <id>nexus</id>
+            <name>Team Nexus Repository</name>
+            <url>http://120.78.66.243:56011/nexus/content/groups/public</url>
+        </repository>
+    </repositories>
+
+    <!-- 指定插件仓库地址  -->
+    <pluginRepositories>
+        <pluginRepository>
+            <id>nexus</id>
+            <name>Team Nexus Repository</name>
+            <url>http://120.78.66.243:56011/nexus/content/groups/public</url>
+        </pluginRepository>
+    </pluginRepositories>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <!--     <spring_version>4.3.10</spring_version> -->
+        <aspectjweaver>1.7.4</aspectjweaver>
+        <sqljdbc4>4.0</sqljdbc4>
+    </properties>
+
+    <dependencies>
+        <!-- spring -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-aop</artifactId>
+            <version>${spring_version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-test</artifactId>
+            <version>${spring_version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.aspectj</groupId>
+            <artifactId>aspectjweaver</artifactId>
+            <version>${aspectjweaver}</version>
+        </dependency>
+        <!-- spring -->
+
+        <!-- sqlserver 驱动 -->
+        <dependency>
+            <groupId>sqlServer-jdbc</groupId>
+            <artifactId>sqlServer</artifactId>
+            <version>4.0</version>
+        </dependency>
+        <!-- sqlserver 驱动 -->
+
+        <!-- mysql 驱动 -->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>5.1.18</version>
+        </dependency>
+        <!-- mysql 驱动 -->
+        <dependency>
+            <groupId>dpcsys</groupId>
+            <artifactId>dpcsys-api</artifactId>
+            <version>0.1</version>
+        </dependency>
+        <!-- RabbitMQ begin-->
+        <dependency>
+            <groupId>com.rabbitmq</groupId>
+            <artifactId>amqp-client</artifactId>
+            <version>3.5.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.amqp</groupId>
+            <artifactId>spring-rabbit</artifactId>
+            <version>1.4.5.RELEASE</version>
+        </dependency>
+        <!-- RabbitMQ end-->
+    </dependencies>
+</project>
