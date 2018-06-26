@@ -2,9 +2,6 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
 		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 		xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
-		xmlns:context="http://www.springframework.org/schema/context"  
-    	xmlns:aop="http://www.springframework.org/schema/aop" 
-    	xmlns:tx="http://www.springframework.org/schema/tx"
 		xsi:schemaLocation="http://www.springframework.org/schema/beans
 							http://www.springframework.org/schema/beans/spring-beans.xsd
 							http://code.alibabatech.com/schema/dubbo
@@ -19,7 +16,5 @@
 	<!-- 声明需要暴露的服务接口 -->
 	<dubbo:service interface="dpcsys.api.dpcInterface.service.DfieldCheckService" ref="dfieldCheckService" timeout="1200000"/>
 	<dubbo:service interface="dpcsys.api.dpcInterface.service.MQProducer" ref="mqProducer" timeout="1200000"/>
-	
-	
-	<dubbo:reference interface="dpcsys.api.dpcnmm.service.DpcRealTimeInformationTabService" id="dpcRealTimeInformationTabService" check="false" />
+
 </beans>

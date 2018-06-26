@@ -24,7 +24,7 @@ public interface DfieldCheckService extends GenericNamedService<DfieldCheck, jav
      * @paramsMap 参数
      * @author: lijianjun
      */
-    public List<DfieldCheck> findByObj(Map<String, Object> paramsMap);
+    List<DfieldCheck> findByObj(Map<String, Object> paramsMap);
 
     /**
      * 查询所有,根据不定参数,分页查询
@@ -36,7 +36,7 @@ public interface DfieldCheckService extends GenericNamedService<DfieldCheck, jav
      * @page 分页信息参数
      * @author: lijianjun
      */
-    public List<Map<String, Object>> findListMapByObj(Map<String, Object> paramsMap);
+    List<Map<String, Object>> findListMapByObj(Map<String, Object> paramsMap);
 
     /**
      * 查询所有,根据不定参数,分页查询
@@ -48,7 +48,7 @@ public interface DfieldCheckService extends GenericNamedService<DfieldCheck, jav
      * @page 分页信息参数
      * @author: lijianjun
      */
-    public List<DfieldCheck> findByPageObj(Map<String, Object> paramsMap, PageBean page);
+    List<DfieldCheck> findByPageObj(Map<String, Object> paramsMap, PageBean page);
 
     /**
      * 查询所有,根据不定参数,分页查询
@@ -60,7 +60,7 @@ public interface DfieldCheckService extends GenericNamedService<DfieldCheck, jav
      * @page 分页信息参数
      * @author: lijianjun
      */
-    public List<Map<String, Object>> findListMapByPageObj(Map<String, Object> paramsMap, PageBean page);
+    List<Map<String, Object>> findListMapByPageObj(Map<String, Object> paramsMap, PageBean page);
 
     /**
      * 查询条数,根据不定参数
@@ -71,5 +71,5 @@ public interface DfieldCheckService extends GenericNamedService<DfieldCheck, jav
      * @paramsMap 参数
      * @author: lijianjun
      */
-    public Map<String, Object> count(Map<String, Object> paramsMap);
+    Map<String, Object> count(Map<String, Object> paramsMap);
 }
