@@ -9,6 +9,7 @@
     </parent>
     <artifactId>dpcsys-dpcInterface-consumption</artifactId>
     <name>dpcsys-dpcInterface-consumption</name>
+    <packaging>war</packaging>
     <url>http://maven.apache.org</url>
 
     <!-- 指定仓库地址 -->
@@ -54,6 +55,18 @@
             <version>0.1</version>
         </dependency>
     </dependencies>
-
-    <packaging>war</packaging>
+    <build>
+        <plugins>
+            <!-- 配置Tomcat插件 -->
+            <plugin>
+                <groupId>org.apache.tomcat.maven</groupId>
+                <artifactId>tomcat7-maven-plugin</artifactId>
+                <version>2.2</version>
+                <configuration>
+                    <path>/</path>
+                    <port>8081</port>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 </project>
