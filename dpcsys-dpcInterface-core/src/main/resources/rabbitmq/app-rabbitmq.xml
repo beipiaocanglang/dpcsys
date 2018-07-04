@@ -40,8 +40,8 @@
 		</rabbit:topic-exchange> -->
 	<!-- 测试 end -->
 		<!-- 消息接收者 -->
-	    <bean id="realTimeListenter" class="dpcsys.core.dpcInterface.rabbitmq.client.listenter.RealTimeListenter"></bean>
-	    <bean id="otherListenter" class="dpcsys.core.dpcInterface.rabbitmq.client.listenter.OtherListenter"></bean>
+	    <bean id="realTimeListenter" class="dpcsys.core.dpcInterface.rabbitmq.listenter.RealTimeListenter"></bean>
+	    <bean id="otherListenter" class="dpcsys.core.dpcInterface.rabbitmq.listenter.OtherListenter"></bean>
 		<!-- 
 			queues：监听的队列，多个的话用逗号（,）分隔 
 			ref：监听器
