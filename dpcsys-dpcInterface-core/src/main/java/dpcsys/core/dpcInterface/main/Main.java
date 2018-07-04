@@ -34,7 +34,8 @@ public class Main {
 			System.out.println(args[0]);
 			fileList = FileCoreUtil.getTempFileList(args[0]);
 		}else{
-			fileList = FileCoreUtil.getTempFileList("src/main/resources/sqlxml");
+			//fileList = FileCoreUtil.getTempFileList("src/main/resources/sqlxml");
+			fileList = FileCoreUtil.getTempFileList("C:\\canglang\\java_project\\1\\dpcsys_test\\dpcsys-dpcInterface-core\\src\\main\\resources\\sqlxml");
 		}
 		SQLBuilder.readStream(fileList);
 //		System.out.println(OverallSituationStatic.getTableAllSql("DfieldCheck"));
