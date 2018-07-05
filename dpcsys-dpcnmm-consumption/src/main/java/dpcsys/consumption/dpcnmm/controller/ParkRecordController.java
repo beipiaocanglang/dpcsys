@@ -1,13 +1,16 @@
 package dpcsys.consumption.dpcnmm.controller;
 
-import com.parking.domain.ParkingConfig;
-import com.parking.domain.ParkingRecord;
-import com.parking.domain.constant.CardTypeEnum;
-import com.parking.domain.constant.ParkTypeEnum;
-import com.parking.domain.tempPojo.SysUser;
-import com.parking.service.IParkConfigService;
-import com.parking.service.IParkRecordService;
-import com.parking.utils.*;
+import dpcsys.api.dpcnmm.model.ParkingConfig;
+import dpcsys.api.dpcnmm.model.ParkingRecord;
+import dpcsys.api.dpcnmm.model.constant.CardTypeEnum;
+import dpcsys.api.dpcnmm.model.constant.ParkTypeEnum;
+import dpcsys.api.dpcnmm.model.tempPojo.SysUser;
+import dpcsys.api.dpcnmm.service.IParkConfigService;
+import dpcsys.api.dpcnmm.service.IParkRecordService;
+import dpcsys.consumption.frame.util.DateConvertUtils;
+import dpcsys.consumption.frame.util.HttpClientUtils;
+import dpcsys.consumption.frame.util.JsonUtil;
+import dpcsys.consumption.frame.util.ResultDTOBuilder;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;

@@ -1,8 +1,8 @@
 package dpcsys.api.dpcnmm.model;
 
-import com.parking.domain.constant.EnableFlagEnum;
-import com.parking.domain.constant.ParkTypeEnum;
-import com.parking.domain.constant.SchemeEnum;
+import dpcsys.api.dpcnmm.model.constant.EnableFlagEnum;
+import dpcsys.api.dpcnmm.model.constant.ParkTypeEnum;
+import dpcsys.api.dpcnmm.model.constant.SchemeEnum;
 
 import java.util.Date;
 
