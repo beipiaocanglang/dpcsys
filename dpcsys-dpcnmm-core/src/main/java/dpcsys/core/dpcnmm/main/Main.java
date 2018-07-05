@@ -1,17 +1,16 @@
 package dpcsys.core.dpcnmm.main;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.util.List;
-
-import org.springframework.context.support.ClassPathXmlApplicationContext;
-
 import dpcsys.api.dpcnmm.model.DfieldCheck;
 import dpcsys.api.dpcnmm.service.DfieldCheckService;
 import faner.dplatformSpringjdbc.api.frame.command.db.springJDBC.xml.SQLBuilder;
 import faner.dplatformSpringjdbc.api.frame.util.tools.file.FileCoreUtil;
 import faner.dplatformSpringjdbc.api.frame.util.tools.json.JsonCoreUtil;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.List;
 
 /**
  * 主方法，启动jar
@@ -34,8 +33,8 @@ public class Main {
             System.out.println(args[0]);
             fileList = FileCoreUtil.getTempFileList(args[0]);
         } else {
-            //fileList = FileCoreUtil.getTempFileList("src/main/resources/sqlxml");
-            fileList = FileCoreUtil.getTempFileList("C:\\canglang\\java_project\\1\\dpcsys_test\\dpcsys-dpcnmm-core\\src\\main\\resources\\sqlxml");
+            fileList = FileCoreUtil.getTempFileList("src/main/resources/sqlxml");
+            //fileList = FileCoreUtil.getTempFileList("C:\\canglang\\JavaProject\\dpcsys\\dpcsys-dpcnmm-core\\src\\main\\resources\\sqlxml");
         }
         SQLBuilder.readStream(fileList);
 //		System.out.println(OverallSituationStatic.getTableAllSql("DfieldCheck"));

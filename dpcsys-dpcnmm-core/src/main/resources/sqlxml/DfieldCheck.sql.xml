@@ -42,6 +42,8 @@
 			#if("$!insTime" != "") and A.ins_time = :insTime #end
 			#if("$!updUser" != "") and A.upd_user = :updUser #end
 			#if("$!updTime" != "") and A.upd_time = :updTime #end
+			updTime  like concat(%,:updTime,%) concat % :updTime %
+			in (:ids) list set
 	    ]]>
     </sqlElement>
 	<sqlElement key="findByPageObj">

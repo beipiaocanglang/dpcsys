@@ -1,10 +1,5 @@
 package dpcsys.core.dpcnmm.service.impl;
 
-import java.util.List;
-import java.util.Map;
-
-import org.apache.log4j.Logger;
-
 import dpcsys.api.dpcnmm.dao.DfieldCheckDao;
 import dpcsys.api.dpcnmm.model.DfieldCheck;
 import dpcsys.api.dpcnmm.service.DfieldCheckService;
@@ -12,6 +7,10 @@ import faner.dplatformSpringjdbc.api.frame.command.db.springJDBC.xml.OverallSitu
 import faner.dplatformSpringjdbc.api.frame.util.tools.page.PageBean;
 import faner.dplatformSpringjdbc.api.frame.util.tools.velocity.VelocityCoreUtils;
 import faner.dplatformSpringjdbc.core.frame.service.impl.GenericNamedServiceImpl;
+import org.apache.log4j.Logger;
+
+import java.util.List;
+import java.util.Map;
 
 /**
  * @version V2.0

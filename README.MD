@@ -1,0 +1,1 @@
+java -jar dpcsys-dpcnmm-core-0.1.jar  /sqlxml

@@ -1,30 +1,26 @@
 package dpcsys.consumption.dpcnmm.controller;
 
-
-import java.util.Date;
-import java.util.List;
-import java.util.Map;
-import java.util.HashMap;
-
+import dpcsys.api.dpcnmm.constants.DpcnmmResponseConstant;
+import dpcsys.api.dpcnmm.constants.DpcnmmResponseHashMap;
+import dpcsys.api.dpcnmm.model.DfieldCheck;
+import dpcsys.api.dpcnmm.service.DfieldCheckService;
+import dpcsys.api.dpcnmm.vo.BaseParameterModel;
+import dpcsys.api.dpcnmm.vo.LogParameterModel;
+import dpcsys.consumption.frame.web.controller.BaseController;
+import faner.dplatformSpringjdbc.api.frame.util.tools.json.JsonCoreUtil;
+import faner.dplatformSpringjdbc.api.frame.util.tools.object.ListCoreUtil;
+import faner.dplatformSpringjdbc.api.frame.util.tools.object.MyBeanCoreUtils;
+import faner.dplatformSpringjdbc.api.frame.util.tools.object.ObjectCoreUtil;
+import faner.dplatformSpringjdbc.api.frame.util.tools.page.PageBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import dpcsys.api.dpcnmm.model.DfieldCheck;
-import dpcsys.api.dpcnmm.vo.BaseParameterModel;
-import dpcsys.api.dpcnmm.vo.LogParameterModel;
-import dpcsys.api.dpcnmm.service.DfieldCheckService;
-import dpcsys.api.dpcnmm.constants.DpcnmmResponseConstant;
-import dpcsys.api.dpcnmm.constants.DpcnmmResponseHashMap;
-
-import faner.dplatformSpringjdbc.api.frame.util.tools.page.PageBean;
-import faner.dplatformSpringjdbc.api.frame.util.tools.json.JsonCoreUtil;
-import faner.dplatformSpringjdbc.api.frame.util.tools.object.ListCoreUtil;
-import faner.dplatformSpringjdbc.api.frame.util.tools.object.ObjectCoreUtil;
-import faner.dplatformSpringjdbc.api.frame.util.tools.object.MyBeanCoreUtils;
-import dpcsys.consumption.frame.web.controller.BaseController;
+import java.util.*;
 
 /**
  * @version V2.0
@@ -38,6 +34,30 @@ public class DfieldCheckController extends BaseController {
 
     @Autowired(required = false)
     private DfieldCheckService dfieldCheckService;
+
+    /**
+     * 测试框架
+     * @param model
+     * @return
+     */
+    @GetMapping("/index")
+    public String index(Model model){
+        Map<String, Object> map = new LinkedHashMap();
+        map.put("name", "zhangsan");
+        map.put("age", 17);
+
+        Map<String, Object> map1 = new LinkedHashMap();
+        map1.put("name", "lisi");
+        map1.put("age", 18);
+
+        List<Object> list = new ArrayList<>();
+        list.add(map);
+        list.add(map1);
+
+        model.addAttribute("itemList", list);
+
+        return "../api/index";
+    }
 
     /**
      * 新增
@@ -115,7 +135,7 @@ public class DfieldCheckController extends BaseController {
     /**
      * 根据ID查询
      *
-     * @param dfieldCheckId id
+     * @param  id
      * @method: getDfieldCheckById
      * @Description: 根据ID查询
      * @author : lijianjun

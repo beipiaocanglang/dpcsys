@@ -37,6 +37,7 @@
         <zkclient_version>0.4</zkclient_version>
         <spring_version>4.3.10.RELEASE</spring_version>
         <jackson>2.9.4</jackson>
+        <fastjson.version>1.2.28</fastjson.version>
     </properties>
 
     <build>
@@ -91,6 +92,23 @@
         </dependency>
         <!-- dubbo end -->
 
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>${fastjson.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>jstl</groupId>
+            <artifactId>jstl</artifactId>
+            <version>1.2</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>3.3.2</version>
+        </dependency>
         <!-- 必须基础jar begin-->
         <dependency>
             <groupId>commons-lang</groupId>
@@ -298,8 +316,5 @@
         <module>dpcsys-dpcnmm-api</module>
         <module>dpcsys-dpcnmm-core</module>
         <module>dpcsys-dpcnmm-consumption</module>
-        <module>dpcsys-dpcInterface-api</module>
-        <module>dpcsys-dpcInterface-core</module>
-        <module>dpcsys-dpcInterface-consumption</module>
     </modules>
 </project>
