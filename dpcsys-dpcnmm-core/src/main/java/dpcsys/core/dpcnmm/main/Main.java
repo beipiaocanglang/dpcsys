@@ -34,7 +34,6 @@ public class Main {
             fileList = FileCoreUtil.getTempFileList(args[0]);
         } else {
             fileList = FileCoreUtil.getTempFileList("src/main/resources/sqlxml");
-            //fileList = FileCoreUtil.getTempFileList("C:\\canglang\\JavaProject\\dpcsys\\dpcsys-dpcnmm-core\\src\\main\\resources\\sqlxml");
         }
         SQLBuilder.readStream(fileList);
 //		System.out.println(OverallSituationStatic.getTableAllSql("DfieldCheck"));
@@ -60,8 +59,7 @@ public class Main {
             System.out.println("进入main方法.....");
             System.out.println("加载完成配置文件.....");
             context = new ClassPathXmlApplicationContext(contextLocations);
-            DfieldCheckService dfieldCheckService = (DfieldCheckService) context
-                    .getBean("dfieldCheckService");
+            DfieldCheckService dfieldCheckService = (DfieldCheckService) context.getBean("dfieldCheckService");
             List<DfieldCheck> list = dfieldCheckService.findByObj(null);
             System.out.println(JsonCoreUtil.toJSONString(list));
 //			List<DfieldCheck> dfiList = new ArrayList<DfieldCheck>();

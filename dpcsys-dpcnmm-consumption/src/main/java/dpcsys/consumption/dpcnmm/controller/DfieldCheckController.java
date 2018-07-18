@@ -19,6 +19,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.*;
 
@@ -42,6 +43,11 @@ public class DfieldCheckController extends BaseController {
      */
     @GetMapping("/index")
     public String index(Model model){
+        return "index";
+    }
+    @ResponseBody
+    @GetMapping("/test")
+    public Object test() {
         Map<String, Object> map = new LinkedHashMap();
         map.put("name", "zhangsan");
         map.put("age", 17);
@@ -54,9 +60,7 @@ public class DfieldCheckController extends BaseController {
         list.add(map);
         list.add(map1);
 
-        model.addAttribute("itemList", list);
-
-        return "../api/index";
+        return list;
     }
 
     /**
